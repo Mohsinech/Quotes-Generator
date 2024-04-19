@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+body {
+  background-color: #f1f1f1;
+  font-family: "author", sans-serif;
+}
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+h3 {
+  font-size: 3rem;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.btn {
+  background-color: black;
+  color: #f1f1f1;
+  border: none;
+  font-size: 1.2rem;
+  padding: 1rem 2rem;
+  font-family: "author", sans-serif;
+  transition: 0.3s all;
+  cursor: pointer;
+  border-radius: 0.6rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3),
+    inset 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+.btn:hover {
+  opacity: 0.9;
+  transform: scale(0.95);
+}
+.quote {
+  font-size: 2.5em;
+  text-align: center;
+  max-width: 100%;
+  width: 800px;
+}
+#author {
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+span {
+  font-size: 0.8rem;
+  font-weight: 500;
+  opacity: 0.9;
+  text-transform: uppercase;
+  position: relative;
+}
+
+span::after {
+  position: absolute;
+  content: "";
+  height: 1px;
+  border-radius: 30px;
+  width: 100%;
+  background-color: black;
+  opacity: 0.9;
+  left: 0;
+  bottom: 0;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+span:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+span a:active {
+  color: red;
+}
+span a:visited {
+  color: red;
+  opacity: 0.9;
+}
+/* For responsive devices */
+
+@media screen and (max-width: 768px) {
+  .container {
+    height: 100vh; /* Adjust height */
+    padding: 2rem; /* Add padding */
+  }
+
+  h3 {
+    font-size: 1.5rem; /* Decrease font size */
+    top: 20%; /* Adjust top position */
+  }
+
+  .btn {
+    padding: 0.75rem 1.5rem; /* Adjust padding */
+    font-size: 0.9rem; /* Decrease font size */
+  }
+
+  .quote {
+    font-size: 1.5em; /* Decrease font size */
+  }
+}
